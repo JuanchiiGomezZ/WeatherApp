@@ -3,14 +3,17 @@ let informacion = document.querySelector("#informacion");
 let buscador = document.querySelector("#buscador");
 let enviar = document.querySelector("#enviar");
 
-
-enviar.onclick = () => {
-  localStorage.setItem('ciudad', buscador.value);
-}
-
 if(localStorage.getItem('ciudad') == null){
   localStorage.setItem('ciudad', 'Argentina');
 }
+
+  enviar.onclick = () => {
+    localStorage.setItem('ciudad', buscador.value)
+    if(localStorage.getItem('ciudad') == ""){
+      localStorage.setItem('ciudad', 'Argentina');
+    }
+  }
+
 
 const weather = async () => {
   try {
@@ -21,7 +24,6 @@ const weather = async () => {
     if (respuesta.status === 200) {
       let information = "";
       const datos = await respuesta.json();
-      console.log(datos.weather[0].icon)
         information += `<div id="informacion">
             <h2 id="ciudad">${datos.name}</h2>
             <div class="clima">
@@ -41,13 +43,19 @@ const weather = async () => {
     } else if (respuesta.status === 401) {
       console.log("Error 401");
     } else if (respuesta.status === 404) {
-      console.log("Error 404, pelicula buscada inexistente");
+      console.log("Error 404");
+      Swal.fire({
+        title: "¡Ciudad no encontrada!",
+        text: "Intente nuevamente",
+        icon: "error",
+        confirmButtonText: "Continuar",
+        timer: "3000",
+      });
     } else {
-      console.log("Error inseperado");
+      console.log("Error inesperado")
     }
   } catch (error) {
     console.log(error);
   }
 };
-weather();
-
+weather()
