@@ -52,6 +52,7 @@ body{
     border-radius: 10px;
     color: white;
     padding-left: 7px;
+    margin: 0 10px;
 }
 input:focus {
     outline: none;
@@ -65,15 +66,13 @@ input:focus {
     border-radius: 10px;
     font-size: 0.9rem;
     cursor: pointer;
-    margin-left: 15px;
 }
 .buscador button:hover{
     color: white;
     background-color:rgba(83, 83, 83, 0.4);
 }
-
 #informacion{
-margin-left:10%;
+margin-left:6%;
 }
 #ciudad{
     font-size: 1.5rem;
@@ -92,11 +91,27 @@ margin-left:10%;
 }
 .secundario{
     position: absolute;
-    bottom: 5%;
+    bottom: 10%;
 }
 .secundario p{
     font-size: 0.8rem;
 }
+
+#currentLocation{
+    background-color:rgba(83, 83, 83, 0.4);
+    border: none;
+    color: rgb(207, 207, 207);
+    padding: 2 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 35px;
+    height: 30px;
+    overflow: hidden;
+
+}
+
 /* 
 @media screen and (max-width: 1536px){
     .card{
