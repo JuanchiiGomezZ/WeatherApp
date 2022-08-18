@@ -33,7 +33,7 @@ body{
     border-radius: 20px;
 
     width: 450px;
-    max-width: 800px;
+    max-width: 90vw;
     height: 350px;
 
 }
@@ -112,20 +112,12 @@ margin-left:6%;
 
 }
 
-/* 
-@media screen and (max-width: 1536px){
-    .card{
-        width: 35vw;
-        height: 45vh;
-    }
-}
-
 
 @media screen and (max-width: 700px){
     .card{
-        width: 60vw;
-        height: 40vh;
+
+        height: 350px;
     }
 }
- */
+ 
 
